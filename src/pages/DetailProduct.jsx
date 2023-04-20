@@ -62,7 +62,7 @@ const DetailProduct = () => {
             .then((result) => {
                 if (result.ErrorCode === 0 && result.Data) {
                     setDisplay(true);
-                    let colorFilter = result.Data.Images.filter(element => { return element.Variant.colorId === colorId });
+                    let colorFilter = result.Data.Images.filter(element => { return element.Variant.colorId == colorId });
                     setDummyimgs(colorFilter.map((element) => {
                         return {
                             img: `${process.env.REACT_APP_API_HOST}/Product/${element.src}`,
